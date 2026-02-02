@@ -22,7 +22,7 @@
     width: 100%;
     background-color: black;
     font-size: 18px;
-}
+    }
 }
 
 /* ===============================
@@ -33,7 +33,7 @@
     width: 80%;
     background-color: black;
     font-size: 20px;
-}
+    }
 }
 
 /* ===============================
@@ -43,7 +43,8 @@
 .caja {
     width: 50%;
     background-color: black;
-}
+    font-size: 24px;
+    }
 }
 
 body{
@@ -52,11 +53,12 @@ body{
 }
 
 section{
-    transform: scale(.7);
+    transform: scale(.6);
     background-color: #ed879f;
     width: 600px;
-    margin: -200px 0px 0px 0px;
+    margin: -230px 0px 0px 50px;
     border-radius: 25px;
+    padding-bottom: 50px;
 }
 img{
     width: 200px;
