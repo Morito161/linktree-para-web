@@ -54,7 +54,6 @@ body{
 }
 
 section{
-    transform: scale(.8);
     background-color: #ed879f;
     width: 600px;
     margin: -100px 0px 0px 220px;   ;
