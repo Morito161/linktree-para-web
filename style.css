@@ -4,6 +4,48 @@
     box-sizing: border-box;
 }
 
+.caja {
+  width: 50%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: black;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 8px;
+}
+
+/* ===============================
+   CELULAR
+   =============================== */
+@media (max-width: 576px) {
+  .caja {
+    width: 100%;
+    background-color: black;
+    font-size: 18px;
+  }
+}
+
+/* ===============================
+   TABLET
+   =============================== */
+@media (min-width: 577px) and (max-width: 992px) {
+  .caja {
+    width: 80%;
+    background-color: black;
+    font-size: 20px;
+  }
+}
+
+/* ===============================
+   PANTALLAS GRANDES
+   =============================== */
+@media (min-width: 993px) {
+  .caja {
+    width: 50%;
+    background-color: black;
+  }
+}
+
 body{
     background-color: black;
     text-align: center;
@@ -13,7 +55,7 @@ section{
     transform: scale(.8);
     background-color: #ed879f;
     width: 600px;
-    margin: 10px 720px   ;
+    margin: -100px 0px 0px 220px;   ;
     border-radius: 25px;
 }
 img{
