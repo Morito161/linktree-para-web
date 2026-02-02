@@ -55,7 +55,7 @@ section{
     transform: scale(.7);
     background-color: #ed879f;
     width: 600px;
-    margin: -200px 0px 0px -200px;
+    margin: -200px 0px 0px 0px;
     border-radius: 25px;
 }
 img{
