@@ -56,7 +56,7 @@ section{
     transform: scale(.6);
     background-color: #ed879f;
     width: 600px;
-    margin: -230px 0px 0px 50px;
+    margin: -230px 0px 0px -150px;
     border-radius: 25px;
     padding-bottom: 50px;
 }
