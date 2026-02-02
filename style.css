@@ -5,45 +5,45 @@
 }
 
 .caja {
-  width: 50%;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: black;
-  text-align: center;
-  font-size: 24px;
-  border-radius: 8px;
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: black;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 8px;
 }
 
 /* ===============================
    CELULAR
    =============================== */
 @media (max-width: 576px) {
-  .caja {
+.caja {
     width: 100%;
     background-color: black;
     font-size: 18px;
-  }
+}
 }
 
 /* ===============================
    TABLET
    =============================== */
 @media (min-width: 577px) and (max-width: 992px) {
-  .caja {
+.caja {
     width: 80%;
     background-color: black;
     font-size: 20px;
-  }
+}
 }
 
 /* ===============================
    PANTALLAS GRANDES
    =============================== */
 @media (min-width: 993px) {
-  .caja {
+.caja {
     width: 50%;
     background-color: black;
-  }
+}
 }
 
 body{
