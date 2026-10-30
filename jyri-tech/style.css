@@ -314,3 +314,28 @@ body.jyri-menu-open{overflow:hidden!important}
   filter:drop-shadow(0 0 8px rgba(0,173,255,.55));
 }
 @media(max-width:600px){.footer .footer-orbit-image{width:48px;height:48px}}
+
+/* Marco tecnológico angular en el encabezado de Nuestros servicios */
+#servicios{position:relative!important;border-top:0!important;isolation:isolate}
+#servicios::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:78px;
+  pointer-events:none;z-index:0;
+  background:linear-gradient(180deg,rgba(0,149,255,.09),transparent 90%);
+  clip-path:polygon(0 72%,5% 8%,19% 8%,21% 27%,73% 27%,75% 8%,95% 8%,100% 72%,100% 100%,0 100%);
+}
+#servicios::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:78px;
+  pointer-events:none;z-index:0;
+  background:linear-gradient(90deg,#0086e5 0%,#1d6ba7 19%,#17385a 45%,#17385a 55%,#1d6ba7 81%,#0086e5 100%);
+  clip-path:polygon(
+    0 71%,5% 7%,19% 7%,21% 26%,73% 26%,75% 7%,95% 7%,100% 71%,
+    100% 75%,94.8% 11%,75.2% 11%,73.2% 30%,20.8% 30%,18.8% 11%,5.2% 11%,0 75%
+  );
+  opacity:.75;filter:drop-shadow(0 0 5px #009dff);
+}
+#servicios>.section-head,#servicios>.grid,#servicios>.catalog-invite{position:relative;z-index:1}
+#servicios>.section-head{padding-top:35px}
+@media(max-width:600px){
+  #servicios::before,#servicios::after{height:45px}
+  #servicios>.section-head{padding-top:26px}
+}
