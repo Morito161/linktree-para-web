@@ -4,109 +4,98 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .caja {
-    width: 50%;
+    width: 100%;
+    max-width: 680px;
     margin: 40px auto;
-    padding: 20px;
-    background-color: black;
-    text-align: center;
-    font-size: 24px;
-    border-radius: 8px;
-}
-
-/* ===============================
-   CELULAR
-   =============================== */
-@media (max-width: 576px) {
-    .caja {
-        width: 100%;
-        background-color: black;
-        font-size: 18px;
-    }
-}
-
-/* ===============================
-   TABLET
-   =============================== */
-@media (min-width: 577px) and (max-width: 992px) {
-    .caja {
-        width: 80%;
-        background-color: black;
-        font-size: 20px;
-    }
-}
-
-/* ===============================
-   PANTALLAS GRANDES
-   =============================== */
-@media (min-width: 993px) {
-    .caja {
-        width: 50%;
-        background-color: black;
-        font-size: 24px;
-    }
-}
-
-body{
-    background-color: black;
+    padding: 0 20px;
     text-align: center;
 }
 
-section{
-    transform: scale(.6);
+section {
+    width: 100%;
+    margin: 0 auto;
     background-color: #ed879f;
-    width: 600px;
-    margin: -230px 0px 0px -450px;
     border-radius: 25px;
-    padding-bottom: 50px;
+    padding: 20px 20px 40px;
 }
-img{
+
+img {
+    display: block;
     width: 200px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
     border: 5px solid white;
-    margin-top: 20px;
+    margin: 0 auto 20px;
 }
-h1{
+
+h1 {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-}  
-p{
+    font-size: clamp(24px, 5vw, 32px);
+    margin-top: 10px;
+}
+
+p {
     color: rgb(229, 242, 46);
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 20px;
+    margin: 20px 0;
     font-size: 18px;
 }
-h2{
+
+h2 {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 50px 0px 10px 0px;
-    font-size: 32px;
+    margin: 35px 0 25px;
+    font-size: clamp(20px, 4.5vw, 30px);
+    overflow-wrap: anywhere;
 }
-.btn{
+
+.redes {
+    padding-bottom: 10px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 550px;
+    margin: 16px auto;
+    padding: 20px 16px;
+    border-radius: 20px;
     background-color: rgb(50, 50, 50);
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 30px 20px;
-    width: 550px;
-    margin: 20px 5px 10px 25px;
-    display: block;
-    border-radius: 20px;
+    font-size: clamp(18px, 4vw, 24px);
     text-decoration: none;
+    overflow-wrap: anywhere;
 }
-a{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    display: block;
-    margin: 50px 0px 50px 0px;
-    font-size: 25px;
-    cursor: pointer;
 
+.btn:hover,
+.btn:focus-visible {
+    background-color: #454545;
 }
-a:hover{
-    color: gray;
-}
-.redes{
-    padding-bottom: 20px;
+
+@media (max-width: 576px) {
+    .caja {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 20px 16px 30px;
+    }
+
+    img {
+        width: 160px;
+    }
+
+    .btn {
+        padding: 18px 12px;
+    }
 }
