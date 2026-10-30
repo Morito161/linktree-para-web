@@ -238,3 +238,32 @@ body{background:#020710}
 #servicios .service .service-art img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:12px!important}
 #servicios .service .service-art.art-gear img{font-size:initial!important}
 
+
+/* Portada basada fielmente en fondo-planeta-mejorado-2.jpeg */
+body.jyri-poster-home .topbar{display:none!important}
+body.jyri-poster-home #inicio.hero-poster{
+  display:block!important;position:relative!important;isolation:isolate;
+  width:min(100%,720px)!important;max-width:720px!important;
+  min-height:0!important;height:auto!important;margin:0 auto!important;
+  padding:0!important;gap:0!important;background:#020710!important;
+  overflow:hidden!important;text-align:initial!important;
+}
+#inicio.hero-poster .hero-poster-image{
+  display:block;width:100%;height:auto;max-width:100%;
+  border:0;border-radius:0;
+}
+#inicio.hero-poster .poster-navigation,
+#inicio.hero-poster .poster-actions{position:absolute;inset:0;pointer-events:none}
+#inicio.hero-poster .poster-hit{display:block;position:absolute;pointer-events:auto;cursor:pointer;border-radius:12px}
+#inicio.hero-poster .poster-hit:focus-visible{outline:3px solid #71e8ff;outline-offset:1px;background:#009dff25}
+#inicio.hero-poster .poster-menu{left:2%;top:2%;width:8%;height:8%}
+#inicio.hero-poster .poster-inicio{left:16%;top:2%;width:9%;height:8%}
+#inicio.hero-poster .poster-servicios{left:26%;top:2%;width:11%;height:8%}
+#inicio.hero-poster .poster-proceso{left:37%;top:2%;width:24%;height:8%}
+#inicio.hero-poster .poster-contacto{left:60%;top:2%;width:15%;height:8%}
+#inicio.hero-poster .poster-cotizar{left:77%;top:1.5%;width:21%;height:8%}
+#inicio.hero-poster .poster-whatsapp{left:12%;top:80%;width:46%;height:10%}
+#inicio.hero-poster .poster-catalogo{left:59%;top:80%;width:30%;height:10%}
+@media(max-width:600px){
+  body.jyri-poster-home #inicio.hero-poster{width:100%!important}
+}
