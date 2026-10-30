@@ -57,3 +57,7 @@
 .hero-copy>p{background:#041324aa;border-radius:14px;padding:10px 18px}
 .grid .service{box-shadow:0 0 0 1px #00aaff22,0 0 25px #007cff19}
 @media(max-width:600px){.topbar{gap:14px;padding:18px 0}.topbar nav{font-size:12px;gap:14px}.top-quote{font-size:12px;padding:8px 13px}.hero{padding-top:28px}.hero-brand h1{font-size:clamp(60px,17vw,90px)}.earth-scene{height:190px;background-position:center top;background-size:auto 240px}.hero-copy{margin-top:-28px}.hero-copy>p{padding:8px 4px}.trust{gap:10px}}
+
+/* Botón destacado de acceso al catálogo */
+.actions .button.ghost[href="./catalogo/"]{background:linear-gradient(135deg,#0b9bea 0%,#2258e8 100%);color:#fff;border:1px solid #69dcff;box-shadow:0 7px 25px rgba(0,161,255,.3);text-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .2s ease,box-shadow .2s ease}
+.actions .button.ghost[href="./catalogo/"]:hover,.actions .button.ghost[href="./catalogo/"]:focus-visible{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,161,255,.5);outline-offset:3px}
