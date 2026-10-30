@@ -142,3 +142,17 @@ body{background:#020710}
 #servicios .service p{font-size:clamp(10px,1.5vw,14px);line-height:1.45;margin:0 0 18px;color:#b9c6d8}
 #servicios .service .tag{margin-top:auto;font-size:14px;color:#39cfff}
 @media(max-width:600px){#servicios{padding-top:22px!important}#servicios .grid{gap:5px}#servicios .service{padding:8px 4px 12px;min-height:205px;border-radius:12px}#servicios .service-art{height:77px;font-size:37px}#servicios .service-art span+span{font-size:22px}#servicios .service-art.art-gear{font-size:57px}#servicios .service h3{font-size:clamp(9px,2.1vw,13px);margin:5px 0}#servicios .service p{font-size:clamp(8px,1.8vw,11px)}#servicios .service .tag{font-size:9px}}
+
+/* Diseño de tarjetas en dos columnas para evitar que se compriman en móvil */
+#servicios .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+#servicios .service{min-width:0}
+@media(max-width:800px){
+#servicios .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:13px!important}
+#servicios .service{min-height:295px!important;padding:16px 11px 19px!important;border-radius:17px!important}
+#servicios .service-art{height:135px!important;font-size:65px!important}
+#servicios .service-art span+span{font-size:37px!important}
+#servicios .service-art.art-gear{font-size:95px!important}
+#servicios .service h3{font-size:clamp(13px,3.4vw,18px)!important;margin:8px 0 9px!important}
+#servicios .service p{font-size:clamp(11px,2.8vw,14px)!important;line-height:1.45!important}
+#servicios .service .tag{font-size:12px!important}
+}
