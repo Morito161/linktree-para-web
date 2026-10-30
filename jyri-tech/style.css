@@ -123,3 +123,6 @@ body{background:#020710}
 /* Ocultar únicamente la ilustración del planeta solicitada */
 .earth-scene{display:none!important}
 .hero-copy{margin-top:24px!important}
+
+/* Ocultar sección Nuestros servicios solicitada por el propietario */
+#servicios{display:none!important}
