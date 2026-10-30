@@ -267,3 +267,22 @@ body.jyri-poster-home #inicio.hero-poster{
 @media(max-width:600px){
   body.jyri-poster-home #inicio.hero-poster{width:100%!important}
 }
+
+/* Corrección móvil: imagen completa sin recorte ni menú duplicado */
+html,body.jyri-poster-home{max-width:100%;overflow-x:hidden!important}
+body.jyri-poster-home>header.topbar{display:none!important;height:0!important;padding:0!important;margin:0!important;border:0!important}
+body.jyri-poster-home main{width:100%;max-width:100%;overflow-x:hidden}
+body.jyri-poster-home main>#inicio.hero-poster{
+  display:block!important;box-sizing:border-box!important;
+  width:100%!important;max-width:720px!important;
+  min-width:0!important;height:auto!important;min-height:0!important;
+  margin:0 auto!important;padding:0!important;
+  overflow:hidden!important;transform:none!important;
+}
+body.jyri-poster-home #inicio.hero-poster>img.hero-poster-image{
+  display:block!important;box-sizing:border-box!important;
+  width:100%!important;max-width:100%!important;
+  min-width:0!important;height:auto!important;max-height:none!important;
+  object-fit:contain!important;object-position:center!important;
+  margin:0!important;padding:0!important;transform:none!important;
+}
