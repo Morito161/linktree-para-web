@@ -42,3 +42,18 @@
 .hero-copy>p{max-width:700px;text-shadow:0 2px 8px #001021}
 .service{border:1px solid #0d9df1;box-shadow:0 0 18px #047eff2e,inset 0 0 22px #0a4a9022}
 @media(max-width:600px){.topbar{padding:18px 0;flex-direction:row;align-items:center}.topbar nav{gap:10px;font-size:11px}.topbar nav a{font-size:11px}.top-quote{font-size:11px;padding:10px 9px}.hero{padding-top:30px}.hero-brand h1{font-size:clamp(70px,18vw,108px)}.earth-scene{height:175px;width:calc(100vw + 0px);background-size:cover}.hero-copy{margin-top:-12px}.hero-slogan{font-size:11px;letter-spacing:.18em}.hero-copy>p{font-size:16px}}
+
+
+/* Final: portada con una sola marca, planeta iluminado y conexiones */
+.topbar{justify-content:center;gap:34px;flex-wrap:wrap;padding:20px 0}
+.topbar nav{align-items:center;justify-content:center;flex-wrap:wrap;gap:clamp(12px,3vw,28px)}
+.topbar nav a:first-child{color:#31d6ff}
+.top-quote{border:1px solid #17baff;border-radius:24px;padding:9px 19px;box-shadow:0 0 14px #009fff44;color:#e5faff;font-weight:700;font-size:14px}
+.hero{padding-top:45px}
+.hero-brand h1{font-size:clamp(74px,14vw,146px)}
+.hero-slogan{margin-top:18px}
+.earth-scene{width:min(100vw,1160px);height:clamp(180px,27vw,325px);margin-top:0;background:url("./earth-network.svg") center 35% / cover no-repeat;overflow:hidden}
+.hero-copy{margin-top:-38px}
+.hero-copy>p{background:#041324aa;border-radius:14px;padding:10px 18px}
+.grid .service{box-shadow:0 0 0 1px #00aaff22,0 0 25px #007cff19}
+@media(max-width:600px){.topbar{gap:14px;padding:18px 0}.topbar nav{font-size:12px;gap:14px}.top-quote{font-size:12px;padding:8px 13px}.hero{padding-top:28px}.hero-brand h1{font-size:clamp(60px,17vw,90px)}.earth-scene{height:190px;background-position:center top;background-size:auto 240px}.hero-copy{margin-top:-28px}.hero-copy>p{padding:8px 4px}.trust{gap:10px}}
