@@ -238,27 +238,3 @@ body{background:#020710}
 #servicios .service .service-art img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:12px!important}
 #servicios .service .service-art.art-gear img{font-size:initial!important}
 
-
-/* Portada JYRI TECH: fotografía original Fondo planeta 1 (30 oct 2026) */
-#inicio.hero{
-  position:relative!important;
-  isolation:isolate;
-  background-image:linear-gradient(180deg,rgba(2,7,16,.12) 0%,rgba(2,7,16,.32) 54%,#020710 100%),url("./fondo-planeta-1.jpeg")!important;
-  background-position:center top!important;
-  background-size:cover!important;
-  background-repeat:no-repeat!important;
-  border-radius:0;
-  padding-top:55px!important;
-  padding-bottom:65px!important;
-}
-#inicio.hero .hero-brand,#inicio.hero .hero-copy{position:relative;z-index:1}
-#inicio.hero .hero-copy>p{background:rgba(2,7,16,.68)!important}
-#inicio.hero .earth-scene{display:none!important}
-@media(max-width:600px){
-  #inicio.hero{
-    background-position:center top!important;
-    background-size:cover!important;
-    padding-top:40px!important;
-    padding-bottom:48px!important;
-  }
-}
