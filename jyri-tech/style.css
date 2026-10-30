@@ -119,3 +119,70 @@ body{background:#020710}
 #servicios .service p{font-size:9px;line-height:1.4}
 #servicios .service .tag{font-size:9px}
 }
+
+/* Portada JYRI TECH: composición compacta de referencia 2026-10-30 */
+body{background:#020712}
+.topbar{width:min(1160px,calc(100% - 26px));border-bottom:0;flex-wrap:nowrap;justify-content:space-between;gap:12px}
+.menu-mark{font-size:25px;line-height:1;color:#fff}
+.topbar nav{flex:1;justify-content:center;flex-wrap:nowrap;overflow:hidden;white-space:nowrap}
+.top-quote{margin-left:0;white-space:nowrap;border-radius:22px}
+.hero.wrap{width:100%;padding:14px 0 28px;background:radial-gradient(ellipse 85% 32% at 50% 45%,#05214a 0%,transparent 80%)}
+.hero-brand{width:100%;padding:12px 14px 0}
+.hero-orbit{width:125px;height:125px;border-width:14px;margin:12px 0 12px;box-shadow:inset 0 0 20px #77d9ff,0 0 25px #007aff}
+.hero-brand h1{font-size:clamp(76px,15vw,156px);letter-spacing:.015em}
+.hero-brand h1 span{font-weight:1000;background:linear-gradient(170deg,#fff 5%,#e2f1ff 33%,#7488a2 55%,#f6fcff 76%,#7c8a9c);background-clip:text}
+.hero-brand h1 strong{font-size:.65em;letter-spacing:.17em;background:linear-gradient(#d5ffff,#0bd8ff 42%,#0574fc 85%);background-clip:text}
+.hero-slogan{margin-top:13px;font-size:clamp(12px,2.1vw,17px)}
+.earth-scene{margin-top:-12px;height:clamp(140px,25vw,290px);width:100%;background-position:center center;background-size:cover}
+.hero-copy{margin-top:-20px;width:min(760px,calc(100% - 28px))}
+.hero-copy>p{background:transparent;padding:0 12px;max-width:640px}
+.actions{width:100%;max-width:620px;gap:16px}
+.actions .button{flex:1;min-width:0}
+.actions .button.ghost[href="./catalogo/"]{background:#030b1a!important;border:1px solid #078aff!important;box-shadow:0 0 14px #007dff33!important;color:#fff!important}
+.trust{width:100%;max-width:780px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:32px;text-align:left}
+.trust span{display:flex;align-items:center;justify-content:center;gap:8px;font-size:10px;line-height:1.4;padding:4px 9px;border-right:1px solid #42607e}
+.trust span:last-child{border-right:0}
+.trust b{color:#18baff;font-size:27px}
+#servicios{padding-top:28px}
+#servicios .section-head{margin-bottom:24px}
+#servicios .section-head>p:last-child{display:none}
+#servicios .section-head h2{font-size:clamp(26px,4vw,43px)}
+#servicios .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+#servicios .service{padding:12px 10px 18px;min-height:240px;text-align:center;background:linear-gradient(150deg,#061b37,#020b1c);border-radius:15px;display:flex;flex-direction:column;align-items:center}
+#servicios .service .ico{display:none}
+.service-art{height:104px;width:100%;display:flex;align-items:center;justify-content:center;gap:6px;font-size:52px;color:#43caff;text-shadow:0 0 20px #008fff;position:relative;background:radial-gradient(ellipse at center,#09539666,transparent 70%)}
+.service-art span+span{font-size:30px;transform:translateY(13px)}
+.service-art.art-gear{font-size:84px}
+.service h3{font-size:clamp(12px,1.7vw,17px);margin:6px 0 4px;text-transform:uppercase}
+.service p{font-size:clamp(10px,1.4vw,13px);line-height:1.35;margin:0 0 8px}
+.service .tag{margin-top:auto;font-size:11px}
+@media(max-width:600px){
+.topbar{padding:15px 0 9px;gap:8px}
+.menu-mark{font-size:23px}
+.topbar nav{gap:clamp(8px,2.5vw,15px)}
+.topbar nav a{font-size:clamp(9px,2.2vw,12px)}
+.topbar nav a[href="./catalogo/"]{display:none}
+.top-quote{font-size:11px;padding:8px 10px}
+.hero.wrap{padding-top:5px}
+.hero-brand{padding-top:0}
+.hero-orbit{width:100px;height:100px;border-width:12px;margin:10px 0}
+.hero-brand h1{font-size:clamp(70px,18vw,110px)}
+.hero-slogan{letter-spacing:.23em}
+.earth-scene{height:clamp(125px,27vw,205px);margin-top:-4px}
+.hero-copy{margin-top:-6px}
+.hero-copy>p{font-size:clamp(13px,3.1vw,17px);line-height:1.55;margin:6px auto}
+.actions{gap:10px;margin-top:15px}
+.actions .button{font-size:clamp(10px,2.5vw,13px);padding:10px 6px;min-height:48px;gap:5px}
+.trust{margin-top:23px}
+.trust span{font-size:clamp(6px,1.65vw,9px);padding:3px 4px;gap:3px}
+.trust b{font-size:clamp(15px,4vw,24px)}
+#servicios{padding-top:15px}
+#servicios .grid{gap:6px}
+#servicios .service{min-height:205px;padding:8px 4px 12px;border-radius:11px}
+.service-art{height:83px;font-size:35px}
+.service-art span+span{font-size:20px}
+.service-art.art-gear{font-size:58px}
+.service h3{font-size:clamp(9px,2.2vw,12px)}
+.service p{font-size:clamp(8px,1.8vw,11px)}
+.service .tag{font-size:9px}
+}
