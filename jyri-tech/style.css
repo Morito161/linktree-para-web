@@ -339,3 +339,15 @@ body.jyri-menu-open{overflow:hidden!important}
   #servicios::before,#servicios::after{height:45px}
   #servicios>.section-head{padding-top:26px}
 }
+
+/* Portada como primera pantalla completa */
+body.jyri-poster-home main>#inicio.hero-poster{
+  min-height:100vh!important;
+  min-height:100svh!important;
+  display:block!important;
+  background:linear-gradient(180deg,#020710 0%,#041326 100%)!important;
+}
+@supports(height:100dvh){
+  body.jyri-poster-home main>#inicio.hero-poster{min-height:100dvh!important}
+}
+body.jyri-poster-home #servicios{scroll-margin-top:0}
