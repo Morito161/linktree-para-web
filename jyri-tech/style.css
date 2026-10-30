@@ -27,3 +27,18 @@
 .section-head h2 em{font-style:normal;color:#2bcaff}
 .service{border-color:#1374a8;box-shadow:inset 0 0 22px #0c6aaa18,0 0 15px #007aff14}
 @media(max-width:600px){.hero{padding:30px 0 64px}.hero-orbit{width:86px;height:86px;border-width:12px;margin-bottom:22px}.hero-orbit:before{left:-26px;top:28px;width:112px;height:11px}.hero-orbit:after{right:-20px;top:3px;width:14px;height:14px}.hero-brand h1{font-size:clamp(58px,17vw,100px)}.hero-slogan{font-size:11px;letter-spacing:.22em}.earth-scene{height:165px;margin-top:6px}.earth-sphere{top:42%}.hero-copy{margin-top:-8px}.hero-copy>p{font-size:16px}.actions{width:100%}.actions .button{flex:1;min-width:145px;padding:14px 10px}.trust{gap:12px;font-size:10px}.section-head h2{font-size:32px}}
+
+
+/* Refinamiento visual inspirado en la portada aprobada */
+.topbar{align-items:center;flex-direction:row;gap:14px;border-bottom:1px solid #102a46}
+.topbar nav{display:flex;flex-wrap:wrap;gap:clamp(12px,3vw,30px);align-items:center}
+.topbar nav a:first-child{color:#2ad5ff;border-bottom:2px solid #20caff;padding-bottom:7px}
+.top-quote{margin-left:auto;flex-shrink:0;border:1px solid #16bfff;border-radius:14px;padding:12px 18px;box-shadow:0 0 14px #008dff55;color:#d9f8ff;font-weight:700;font-size:14px}
+.hero{padding-top:46px}
+.hero-brand h1{font-size:clamp(78px,15vw,154px)}
+.hero-orbit{border-color:#e7f2ff}
+.earth-scene{width:min(100vw,1160px);height:clamp(165px,30vw,340px);margin-top:0;background:url("./earth-network.svg") center center/cover no-repeat;filter:drop-shadow(0 0 18px #0479ff55)}
+.hero-copy{margin-top:-40px}
+.hero-copy>p{max-width:700px;text-shadow:0 2px 8px #001021}
+.service{border:1px solid #0d9df1;box-shadow:0 0 18px #047eff2e,inset 0 0 22px #0a4a9022}
+@media(max-width:600px){.topbar{padding:18px 0;flex-direction:row;align-items:center}.topbar nav{gap:10px;font-size:11px}.topbar nav a{font-size:11px}.top-quote{font-size:11px;padding:10px 9px}.hero{padding-top:30px}.hero-brand h1{font-size:clamp(70px,18vw,108px)}.earth-scene{height:175px;width:calc(100vw + 0px);background-size:cover}.hero-copy{margin-top:-12px}.hero-slogan{font-size:11px;letter-spacing:.18em}.hero-copy>p{font-size:16px}}
