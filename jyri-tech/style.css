@@ -232,3 +232,8 @@ body{background:#020710}
   #servicios .service p{font-size:clamp(11px,2.6vw,14px)!important;line-height:1.45!important}
   #servicios .service .tag{font-size:clamp(10px,2.4vw,12px)!important}
 }
+
+/* Fotografías reales de los cuatro servicios */
+#servicios .service .service-art{overflow:hidden!important;border-radius:12px!important;background:#041326!important;text-shadow:none!important}
+#servicios .service .service-art img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:12px!important}
+#servicios .service .service-art.art-gear img{font-size:initial!important}
