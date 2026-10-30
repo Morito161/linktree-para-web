@@ -119,3 +119,7 @@ body{background:#020710}
 #servicios .service p{font-size:9px;line-height:1.4}
 #servicios .service .tag{font-size:9px}
 }
+
+/* Ocultar únicamente la ilustración del planeta solicitada */
+.earth-scene{display:none!important}
+.hero-copy{margin-top:24px!important}
