@@ -34,7 +34,7 @@ img {
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    object-position: center 65%;
+    object-position: center 15%;
     border-radius: 50%;
     border: 5px solid white;
     margin: 0 auto 20px;
