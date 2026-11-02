@@ -339,3 +339,32 @@ body.jyri-menu-open{overflow:hidden!important}
   #servicios::before,#servicios::after{height:45px}
   #servicios>.section-head{padding-top:26px}
 }
+
+/* Portada de entrada: una pantalla completa antes de Nuestros servicios */
+body.jyri-poster-home main>#inicio.hero-poster{
+  min-height:100svh!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  width:min(100%,720px)!important;
+  max-width:720px!important;
+}
+body.jyri-poster-home #inicio.hero-poster>img.hero-poster-image{
+  width:100%!important;
+  height:auto!important;
+  max-height:100svh!important;
+  object-fit:contain!important;
+}
+@media(min-width:721px){
+ body.jyri-poster-home main>#inicio.hero-poster{min-height:100svh!important}
+}
+/* Recorte de la misma órbita del archivo de portada, sin dibujo sustituto */
+.footer .footer-orbit-image{
+ width:70px;height:70px;
+ background-image:url("./fondo-planeta-mejorado-2.jpeg");
+ background-size:500% auto;
+ background-position:50% 23%;
+ border-radius:50%;
+ box-shadow:0 0 16px rgba(0,162,255,.28);
+}
+@media(max-width:600px){.footer .footer-orbit-image{width:64px;height:64px}}
