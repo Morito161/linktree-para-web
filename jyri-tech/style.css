@@ -406,3 +406,42 @@ body.jyri-poster-home #inicio.hero-poster>img.hero-poster-image{
   height:72px!important;
  }
 }
+
+/* Ajuste final: la portada termina exactamente donde acaba la imagen */
+body.jyri-poster-home main>#inicio.hero-poster{
+ height:auto!important;
+ min-height:0!important;
+ max-height:none!important;
+ justify-content:flex-start!important;
+}
+body.jyri-poster-home #inicio.hero-poster>img.hero-poster-image{
+ display:block!important;
+ width:100%!important;
+ height:auto!important;
+ max-height:none!important;
+ object-fit:contain!important;
+}
+/* Footer: órbita compacta, sin mostrar la composición completa */
+.footer .footer-orbit-image{
+ display:inline-block!important;
+ flex:0 0 44px!important;
+ width:44px!important;
+ height:44px!important;
+ min-width:44px!important;
+ background-image:url("./fondo-planeta-mejorado-2.jpeg")!important;
+ background-repeat:no-repeat!important;
+ background-size:510% auto!important;
+ background-position:50% 23%!important;
+ border-radius:50%!important;
+ clip-path:circle(49% at 50% 50%)!important;
+ box-shadow:none!important;
+ filter:drop-shadow(0 0 4px rgba(0,175,255,.6))!important;
+}
+@media(max-width:600px){
+ .footer .footer-orbit-image{
+  flex:0 0 38px!important;
+  width:38px!important;
+  height:38px!important;
+  min-width:38px!important;
+ }
+}
