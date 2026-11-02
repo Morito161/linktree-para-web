@@ -368,3 +368,19 @@ body.jyri-poster-home #inicio.hero-poster>img.hero-poster-image{
  box-shadow:0 0 16px rgba(0,162,255,.28);
 }
 @media(max-width:600px){.footer .footer-orbit-image{width:64px;height:64px}}
+
+/* Navbar al borde superior, portada completa sin franja vacía encima */
+body.jyri-poster-home main>#inicio.hero-poster{
+ justify-content:flex-start!important;
+ min-height:100svh!important;
+}
+body.jyri-poster-home #inicio.hero-poster>img.hero-poster-image{
+ max-height:100svh!important;
+ object-fit:contain!important;
+ object-position:top center!important;
+}
+@media(min-width:721px){
+ body.jyri-poster-home main>#inicio.hero-poster{
+  justify-content:flex-start!important;
+ }
+}
