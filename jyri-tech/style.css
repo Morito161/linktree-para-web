@@ -384,3 +384,25 @@ body.jyri-poster-home #inicio.hero-poster>img.hero-poster-image{
   justify-content:flex-start!important;
  }
 }
+
+/* Footer: mostrar completa la órbita plateada de la portada */
+.footer .footer-orbit-image{
+ display:block!important;
+ flex:0 0 86px!important;
+ width:86px!important;
+ height:86px!important;
+ background-image:url("./fondo-planeta-mejorado-2.jpeg")!important;
+ background-repeat:no-repeat!important;
+ background-size:370% auto!important;
+ background-position:50% 25%!important;
+ border-radius:14px!important;
+ filter:drop-shadow(0 0 9px rgba(0,175,255,.55))!important;
+ box-shadow:none!important;
+}
+@media(max-width:600px){
+ .footer .footer-orbit-image{
+  flex-basis:72px!important;
+  width:72px!important;
+  height:72px!important;
+ }
+}
