@@ -34,7 +34,19 @@ border-top:1px solid #0bbaf3;box-shadow:0 -15px 40px #0076cb3b}
 .section-title{margin:23px 0 13px}
 footer{border-top-color:#1b7d9d}
 @media(max-width:390px){.link .symbol{width:40px;padding-right:9px}.social-icon{width:25px;height:25px}.globe{height:260px}.planet{height:230px}}
-.linkedin-official{width:28px;height:28px;display:block;flex:none}@media(max-width:390px){.linkedin-official{width:25px;height:25px}}</style></head><body><main class="shell">
+.linkedin-official{width:28px;height:28px;display:block;flex:none}@media(max-width:390px){.linkedin-official{width:25px;height:25px}}
+/* Perfil visual: solo acentos de color. Híbrido mantiene el estilo original. */
+body[data-profile="soc"]{--profile-accent:#438dff;--profile-edge:#3479d8;--profile-glow:#438dff55}
+body[data-profile="red"]{--profile-accent:#ff557e;--profile-edge:#e54c78;--profile-glow:#ff557e55}
+body[data-profile="soc"] .mode.active,body[data-profile="red"] .mode.active{background:var(--profile-accent);border-color:var(--profile-accent);box-shadow:inset 0 0 14px #ffffff28,0 0 14px var(--profile-glow)}
+body[data-profile="soc"] .frame,body[data-profile="red"] .frame{border-color:var(--profile-edge);box-shadow:0 0 0 1px var(--profile-glow),0 0 28px var(--profile-glow)}
+body[data-profile="soc"] .portrait,body[data-profile="red"] .portrait{border-color:var(--profile-accent);box-shadow:0 0 0 5px var(--profile-glow),0 0 19px var(--profile-glow)}
+body[data-profile="soc"] .role,body[data-profile="red"] .role{color:var(--profile-accent)}
+body[data-profile="soc"] .tag,body[data-profile="red"] .tag{border-color:var(--profile-edge)}
+body[data-profile="soc"] .rule,body[data-profile="red"] .rule{background:linear-gradient(90deg,transparent,var(--profile-accent),transparent)}
+body[data-profile="soc"] .link:not(.piasap),body[data-profile="red"] .link:not(.piasap){border-color:var(--profile-edge);box-shadow:inset 0 0 12px var(--profile-glow),0 0 8px var(--profile-glow)}
+body[data-profile="soc"] .link:not(.piasap) .arrow,body[data-profile="red"] .link:not(.piasap) .arrow{color:var(--profile-accent)}
+</style></head><body><main class="shell">
 <div class="modes" role="group" aria-label="Presentación profesional"><button class="mode active" type="button" data-mode="hybrid" aria-pressed="true">Híbrido</button><button class="mode" type="button" data-mode="soc" aria-pressed="false">SOC</button><button class="mode" type="button" data-mode="red" aria-pressed="false">Red Team</button></div>
 <div class="frame"><header class="top"><div class="brand"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="31" cy="32" r="22" stroke="#44dff2" stroke-width="4"/><ellipse cx="32" cy="32" rx="32" ry="11" transform="rotate(-35 32 32)" stroke="#44dff2" stroke-width="4"/><circle cx="52" cy="12" r="4" fill="#44dff2"/></svg><span>JYRI <strong>TECH</strong></span></div><span class="online">ONLINE</span></header>
 <section class="intro"><div class="globe"><div class="planet"></div></div><img class="portrait" src="./plantilla-clientes/foto-perfil-mia.jpeg" alt="Fotografía profesional de José Luis Ramírez Ruiz"><h1>Ing. José Luis Ramírez Ruiz</h1><div class="location"><b>♦</b> México, CDMX</div><div class="rule"></div><div class="role" id="role">Cybersecurity Analyst | Full Stack Developer</div><div class="subtitle" id="subtitle">Ethical Hacking • AI Security Automation</div><div class="tags" id="tags"><span class="tag">⬡ SOC</span><span class="tag">⚔ RED TEAM</span><span class="tag">▣ AI</span></div></section>
@@ -50,5 +62,5 @@ footer{border-top-color:#1b7d9d}
 </nav><footer>© 2026 JYRI TECH · SECURE · BUILD · INNOVATE</footer></div></main>
 <script>
 const options={hybrid:{role:"Cybersecurity Analyst | Full Stack Developer",subtitle:"Ethical Hacking • AI Security Automation",tags:["♢ SOC","⚔ RED TEAM","▣ AI"]},soc:{role:"Cybersecurity Analyst | SOC",subtitle:"Threat Detection • Incident Response • Security Monitoring",tags:["♢ SOC","▣ BLUE TEAM","▣ AI"]},red:{role:"Red Team | Offensive Security",subtitle:"Ethical Hacking • Pentesting • Security Automation",tags:["⚔ RED TEAM","♢ PENTEST","▣ AI"]}};
-document.querySelectorAll(".mode").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll(".mode").forEach(b=>{b.classList.toggle("active",b===button);b.setAttribute("aria-pressed",String(b===button))});const selected=options[button.dataset.mode];document.querySelector("#role").textContent=selected.role;document.querySelector("#subtitle").textContent=selected.subtitle;document.querySelector("#tags").innerHTML=selected.tags.map(t=>'<span class="tag">'+t+'</span>').join("")}));
+document.querySelectorAll(".mode").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll(".mode").forEach(b=>{b.classList.toggle("active",b===button);b.setAttribute("aria-pressed",String(b===button))});document.body.dataset.profile=button.dataset.mode;const selected=options[button.dataset.mode];document.querySelector("#role").textContent=selected.role;document.querySelector("#subtitle").textContent=selected.subtitle;document.querySelector("#tags").innerHTML=selected.tags.map(t=>'<span class="tag">'+t+'</span>').join("")}));
 </script></body></html>
