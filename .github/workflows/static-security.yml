@@ -1,0 +1,59 @@
+name: Static website security checks
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  security:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify static pages and JavaScript
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import subprocess
+          import tempfile
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.links=[]
+                  self.scripts=[]
+                  self.inline=[]
+                  self.capture=False
+              def handle_starttag(self, tag, attrs):
+                  a=dict(attrs)
+                  if tag=='a': self.links.append(a)
+                  if tag=='script':
+                      if 'src' in a: self.scripts.append(a['src'])
+                      else: self.capture=True
+              def handle_endtag(self, tag):
+                  if tag=='script': self.capture=False
+              def handle_data(self, data):
+                  if self.capture: self.inline.append(data)
+          for filename in ('index.html','jyri-tech/index.html'):
+              html=Path(filename).read_text(encoding='utf-8')
+              page=Page()
+              page.feed(html)
+              assert '<meta name="referrer" content="no-referrer">' in html, filename+' missing referrer policy'
+              for link in page.links:
+                  if link.get('target')=='_blank':
+                      rel=set(link.get('rel','').split())
+                      assert {'noopener','noreferrer'} <= rel, filename+' unsafe external link'
+              for script in page.inline:
+                  with tempfile.NamedTemporaryFile(mode='w',suffix='.js',encoding='utf-8') as tmp:
+                      tmp.write(script)
+                      tmp.flush()
+                      subprocess.run(['node','--check',tmp.name],check=True)
+              print(filename, 'passed')
+          assert 'replaceChildren(...selected.tags.map' in Path('index.html').read_text(encoding='utf-8')
+          assert '.innerHTML=selected.tags' not in Path('index.html').read_text(encoding='utf-8')
+          subprocess.run(['node','--check','jyri-tech/script.js'],check=True)
+          PY
