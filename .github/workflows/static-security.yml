@@ -1,0 +1,94 @@
+name: Static website security checks
+on:
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  security:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify static pages and JavaScript
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import subprocess
+          import tempfile
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.links=[]
+                  self.scripts=[]
+                  self.inline=[]
+                  self.capture=False
+              def handle_starttag(self, tag, attrs):
+                  a=dict(attrs)
+                  if tag=='a': self.links.append(a)
+                  if tag=='script':
+                      if 'src' in a: self.scripts.append(a['src'])
+                      else: self.capture=True
+              def handle_endtag(self, tag):
+                  if tag=='script': self.capture=False
+              def handle_data(self, data):
+                  if self.capture: self.inline.append(data)
+          for filename in ('index.html','jyri-tech/index.html'):
+              html=Path(filename).read_text(encoding='utf-8')
+              page=Page()
+              page.feed(html)
+              assert '<meta name="referrer" content="no-referrer">' in html, filename+' missing referrer policy'
+              for link in page.links:
+                  if link.get('target')=='_blank':
+                      rel=set(link.get('rel','').split())
+                      assert {'noopener','noreferrer'} <= rel, filename+' unsafe external link'
+              for script in page.inline:
+                  with tempfile.NamedTemporaryFile(mode='w',suffix='.js',encoding='utf-8') as tmp:
+                      tmp.write(script)
+                      tmp.flush()
+                      subprocess.run(['node','--check',tmp.name],check=True)
+              print(filename, 'passed')
+          assert 'replaceChildren(...selected.tags.map' in Path('index.html').read_text(encoding='utf-8')
+          assert '.innerHTML=selected.tags' not in Path('index.html').read_text(encoding='utf-8')
+          subprocess.run(['node','--check','jyri-tech/script.js'],check=True)
+          PY
+      - name: Install Chromium for interactive checks
+        run: |
+          npm install --no-save --package-lock=false playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Test profile selector and mobile navigation
+        run: |
+          node <<'JS'
+          const { chromium } = require('playwright');
+          const assert = require('node:assert/strict');
+          const path = require('node:path');
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            try {
+              const page=await browser.newPage({viewport:{width:390,height:844}});
+              const errors=[];
+              page.on('pageerror',error=>errors.push(error.message));
+              await page.goto('file://'+path.resolve('index.html'));
+              for (const [mode,expected] of [['soc','Cybersecurity Analyst | SOC'],['red','Red Team | Offensive Security'],['hybrid','Cybersecurity Analyst | Full Stack Developer']]) {
+                await page.locator('[data-mode="'+mode+'"]').click();
+                assert.equal(await page.locator('#role').textContent(),expected);
+                assert.equal(await page.locator('[data-mode="'+mode+'"]').getAttribute('aria-pressed'),'true');
+                assert.equal(await page.locator('#tags .tag').count(),3);
+              }
+              await page.goto('file://'+path.resolve('jyri-tech/index.html'));
+              await page.locator('#openMobileMenu').click();
+              assert.equal(await page.locator('#openMobileMenu').getAttribute('aria-expanded'),'true');
+              assert.equal(await page.locator('#jyriSideMenu').getAttribute('aria-hidden'),'false');
+              await page.keyboard.press('Escape');
+              assert.equal(await page.locator('#openMobileMenu').getAttribute('aria-expanded'),'false');
+              assert.equal(await page.locator('#jyriSideMenu').getAttribute('aria-hidden'),'true');
+              assert.deepEqual(errors,[],'Unexpected JavaScript errors');
+              console.log('Profile switcher and mobile menu interactions passed');
+            } finally { await browser.close(); }
+          })().catch(error=>{console.error(error);process.exit(1)});
+          JS
